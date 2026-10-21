@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hanzi-lint"
+version = "0.1.0"
+description = "中文文案排版检查与自动修复 CLI / Lint and auto-fix Chinese copywriting typography"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "aoyexiaoqi"}]
+requires-python = ">=3.9"
+dependencies = ["tomli>=1.1; python_version<'3.11'"]
+keywords = ["chinese", "lint", "typography", "markdown", "copywriting", "cjk"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+  "Natural Language :: Chinese (Simplified)",
+  "Topic :: Text Processing :: Linguistic",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "pytest-cov"]
+
+[project.scripts]
+hanzi-lint = "hanzi_lint.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/aoyexiaoqi/hanzi-lint"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

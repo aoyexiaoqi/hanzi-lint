@@ -1,0 +1,11 @@
+- id: hanzi-lint
+  name: hanzi-lint (check Chinese typography)
+  entry: hanzi-lint
+  language: python
+  types_or: [markdown, text]
+  files: \.(md|markdown|txt)$
+- id: hanzi-lint-fix
+  name: hanzi-lint (fix Chinese typography)
+  entry: hanzi-lint --fix
+  language: python
+  files: \.(md|markdown|txt)$
